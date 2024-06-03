@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Foodplan</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h3 class="header__name">FoodPlan</h3>
+            <div class="header__nav-and-profile">
+                <div class="header__profile none" aria-expanded="false" aria-controls="list">
+                    <div class="header__greeting">
+                        <p class="header__hello">Привет!</p>
+                        <p class="header__nickname">Meery</p>
+                    </div>
+                    <div class="header__imgs">
+                        <img src="/public/imgs/user.svg" alt="" class="header__img">
+                        <img class="header__arrow" src="/public/imgs/arrow-down-338-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <ul class="header__menu">
+                    <li class="header__nav">
+                        <img src="/public/imgs/home.svg" alt="" class="header__icon">
+                        <span href="" class="header__link">Главная</span>
+                    </li>
+                    <li class="header__nav">
+                        <img src="/public/imgs/about.svg" alt="" class="header__icon">
+                        <span href="" class="header__link">О нас</span>
+                    </li>
+                    <li class="header__nav">
+                        <img src="/public/imgs/exit.svg" alt="" class="header__icon">
+                        <a href="/" class="header__link">Выход</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="auth-sec">
+            <form class="authorization">
+                <h1 class="site-title">FoodPlan</h1>
+                <p class="form-title">Вход в профиль</p>
+                <label class="authorization__label email">
+                    <p class="authorization__text">Почта</p>
+                    <input class="authorization__email input" type="email" required>
+                </label>
+                <label class="authorization__label password">
+                    <p class="authorization__text">Пароль</p>
+                    <input class="authorization__password input" type="password" minlength="8" required>
+                </label>
+                <button type="submit" class="authorization__button">Войти</button>
+            </form>
+        </section>
+        <section class="start none">
+            <h1 class="start__title">Рассчитайте план питания для эффективного похудения в соответствии с вашими полом и
+                возрастом
+            </h1>
+            <div class="start__choose-gender">
+                <div class="start__gender">
+                    <img src="/public/imgs/man.webp" class="start__gender-img male" />
+                    <p class="start__text">Мужчина</p>
+                </div>
+                <p class="start__or">Или</p>
+                <div class="start__gender">
+                    <img src="/public/imgs/woman.webp" class="start__gender-img">
+                    <p class="start__text">Женщина</p>
+                </div>
+            </div>
+        </section>
+        <section class="quiz none">
+            <div class="quiz__circle">
+                <picture>
+                    <img src="/public/imgs/quiz_img1.svg" alt="quiz image" class="quiz__img">
+                </picture>
+            </div>
+            <h1 class="quiz__question">Насколько вы физически активны?</h1>
+            <div class="quiz__buttons">
+                <button class="quiz__button">У меня минимальная физическая активность</button>
+                <button class="quiz__button">Я часто хожу пешком</button>
+                <button class="quiz__button">Я занимаюсь 1-2 раза в неделю</button>
+                <button class="quiz__button">Я занимаюсь 3-4 раза в неделю</button>
+                <button class="quiz__button">Я занимаюсь 5-7 раз в неделю</button>
+            </div>
+            <button class="quiz__back">
+                <img class="quiz__back-img" src="/public/imgs/back-svgrepo-com.svg" alt="">
+                <p>Назад</p>
+            </button>
+        </section>
+        <section class="quiz none">
+            <div class="quiz__circle">
+                <picture>
+                    <img src="/public/imgs/hunger.svg" alt="quiz image" class="quiz__img">
+                </picture>
+            </div>
+            <h1 class="quiz__question">В какое время дня вы больше всего чувствуете голод?</h1>
+            <div class="quiz__buttons">
+                <button class="quiz__button">Утром</button>
+                <button class="quiz__button">В обед</button>
+                <button class="quiz__button">После обеда</button>
+                <button class="quiz__button">Вечером</button>
+                <button class="quiz__button">Я хочу есть все время</button>
+            </div>
+            <button class="quiz__back">
+                <img class="quiz__back-img" src="/public/imgs/back-svgrepo-com.svg" alt="">
+                <p>Назад</p>
+            </button>
+        </section>
+        <section class="quiz none">
+            <div class="quiz__circle">
+                <picture>
+                    <img src="/public/imgs/water.svg" alt="quiz image" class="quiz__img">
+                </picture>
+            </div>
+            <h1 class="quiz__question">Сколько воды вы выпиваете в день?</h1>
+            <div class="quiz__buttons">
+                <button class="quiz__button">Меньше 2 стаканов</button>
+                <button class="quiz__button">2-4 стакана</button>
+                <button class="quiz__button">4-6 стаканов</button>
+                <button class="quiz__button">6-8 стаканов</button>
+                <button class="quiz__button">Более 8 стаканов</button>
+            </div>
+            <button class="quiz__back">
+                <img class="quiz__back-img" src="/public/imgs/back-svgrepo-com.svg" alt="">
+                <p>Назад</p>
+            </button>
+        </section>
+        <section class="quiz none">
+            <div class="quiz__circle">
+                <picture>
+                    <img src="/public/imgs/sleep.svg" alt="quiz image" class="quiz__img">
+                </picture>
+            </div>
+            <h1 class="quiz__question">Сколько часов вы спите?</h1>
+            <div class="quiz__buttons">
+                <button class="quiz__button">Менее 5 часов</button>
+                <button class="quiz__button">5-6 часов</button>
+                <button class="quiz__button">7-8 часов</button>
+                <button class="quiz__button">Более 8 часов</button>
+            </div>
+            <button class="quiz__back">
+                <img class="quiz__back-img" src="/public/imgs/back-svgrepo-com.svg" alt="">
+                <p>Назад</p>
+            </button>
+        </section>
+        <section class="quiz none">
+            <div class="quiz__circle">
+                <picture>
+                    <img src="/public/imgs/easy-weight.svg" alt="quiz image" class="quiz__img">
+                </picture>
+            </div>
+            <h1 class="quiz__question">Легко ли вам похудеть?</h1>
+            <div class="quiz__buttons">
+                <button class="quiz__button">Если я сижу на диете и занимаюсь спортом – легко</button>
+                <button class="quiz__button">Это немного сложный процесс для меня</button>
+                <button class="quiz__button">Похудение всегда дается мне тяжело</button>
+            </div>
+            <button class="quiz__back">
+                <img class="quiz__back-img" src="/public/imgs/back-svgrepo-com.svg" alt="">
+                <p>Назад</p>
+            </button>
+        </section>
+        <section class="result none">
+            <div class="result__container">
+                <p class="result__text">С нашим планом питания вы можете забыть о подсчете калорий и не заморачиваться о
+                    выборе еды. Каждый из ваших приемов пищи рассчитывается заранее.</p>
+                <img src="/public/imgs/result-img.webp" alt="">
+                <button class="result__button">Узнать свой рацион</button>
+            </div>
+        </section>
+        <div class="menu-and-calendar">
+            <section class="section-menu">
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 1</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Творог с голубикой</p>
+                            <img src="/public/imgs/curd.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 247 ккал</li>
+                                <li class="days-menu__value">Белки: 24 грамм</li>
+                                <li class="days-menu__value">Жиры: 14 грамм</li>
+                                <li class="days-menu__value">Углеводы: 14 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">150 гр творога 9%</li>
+                                <li class="days-menu__value">30 гр голубики</li>
+                                <li class="days-menu__value">мята</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Творог переложить в мисочку и добавить ягоды, по желанию
+                                    украсить
+                                    листиком мяты.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Кето-яйца с фаршем</p>
+                            <img src="/public/imgs/Keto eggs with minced meat.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 690 ккал</li>
+                                <li class="days-menu__value">Белки: 42 грамм</li>
+                                <li class="days-menu__value">Жиры: 60 грамм</li>
+                                <li class="days-menu__value">Углеводы: 3 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">70-80 г говяжьего, свиного или бараньего фарша</li>
+                                <li class="days-menu__value">45-55 г сыра</li>
+                                <li class="days-menu__value">40 г сливочного масла</li>
+                                <li class="days-menu__value">3 яйца</li>
+                                <li class="days-menu__value">зелень и листья салата для подачи</li>
+                                <li class="days-menu__value">соль и перец по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Обжарьте фарш на сливочном масле до готовности.</li>
+                                <li class="days-menu__value">Возьмите форму для выпечки, выложите в нее фарш и
+                                    проделайте в
+                                    нем 3 отверстия, затем разбейте в них куриные яйца. Сверху потрите сыр.</li>
+                                <li class="days-menu__value">Поставьте блюдо в духовку, разогретую до 220 градусов,
+                                    приблизительно на 12-15 мин, пока яйца не пропекутся.</li>
+                                <li class="days-menu__value">Готовое блюдо можно украсить авокадо или вашей любимой
+                                    зеленью.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Кабачковый салат с грецкими орехами</p>
+                            <img src="/public/imgs/Squash salad with walnuts.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 486 ккал</li>
+                                <li class="days-menu__value">Белки: 7 грамм</li>
+                                <li class="days-menu__value">Жиры: 47 грамм</li>
+                                <li class="days-menu__value">Углеводы: 12 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">2 небольших кабачка</li>
+                                <li class="days-menu__value">1 салат айсберг или ромэн</li>
+                                <li class="days-menu__value">15 г зеленого лука</li>
+                                <li class="days-menu__value">120 г рукколы</li>
+                                <li class="days-menu__value">90 г грецких орехов</li>
+                                <li class="days-menu__value">3 ст. ложки оливкового масла</li>
+                                <li class="days-menu__value">150 мл майонеза</li>
+                                <li class="days-menu__value">1-3 чайные ложки лимонного сока</li>
+                                <li class="days-menu__value">1-2 зубчика чеснока</li>
+                                <li class="days-menu__value">соль, перец, чили по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Смешайте 2 ст. ложки оливкового масла, майонез, лимонный
+                                    сок и
+                                    мелко порубленный зубчик чеснока и засыпьте специями.</li>
+                                <li class="days-menu__value">Нарежьте рукколу, салат и зеленый лук и поместите в миску.
+                                </li>
+                                <li class="days-menu__value">Почистите кабачки и порежьте их на брусочки 1-2 см, затем
+                                    положите их на сковороду с разогретым на среднем огне оливковым маслом. Готовьте
+                                    кабачки
+                                    в сковороде до тех пор, пока они немного не подрумянятся, но они должны остаться
+                                    твердыми.</li>
+                                <li class="days-menu__value">Затем поместите готовые кусочки кабачков в миску к салату,
+                                    рукколе, зеленому луку и перемешайте.</li>
+                                <li class="days-menu__value">Измельчите грецкие орехи и поджаривайте их в сковороде, где
+                                    готовились кабачки. Потом добавьте готовые орехи к салату и заправьте его соусом из
+                                    оливкового масла, лимонного сока и чеснока.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 2</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Яйца с овощами</p>
+                            <img src="/public/imgs/eggs.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 290 ккал</li>
+                                <li class="days-menu__value">Белки: 20 грамм</li>
+                                <li class="days-menu__value">Жиры: 21 грамм</li>
+                                <li class="days-menu__value">Углеводы: 7 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">3 крупных вареных яйца</li>
+                                <li class="days-menu__value">средний огурец</li>
+                                <li class="days-menu__value">2 листа салата</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Яйца отварить и почистить. Огурец нарезать и выложить
+                                    тарелку
+                                    вместе с листьями салата, добавить нарезанные пополам яйца.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Кето-рулеты из огурца</p>
+                            <img src="/public/imgs/Keto Cucumber rolls.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 400 ккал</li>
+                                <li class="days-menu__value">Белки: 23 грамм</li>
+                                <li class="days-menu__value">Жиры: 44 грамм</li>
+                                <li class="days-menu__value">Углеводы: 3 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">100-110 г копченой индейки</li>
+                                <li class="days-menu__value">4 длинных и тонких ломтика свежего огурца</li>
+                                <li class="days-menu__value">2 ломтика сливочного сыра</li>
+                                <li class="days-menu__value">8 ломтиков салями</li>
+                                <li class="days-menu__value">2 ст. ложки майонеза</li>
+                                <li class="days-menu__value">горстка шпината</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value"> Снимите лишнюю влагу с огурцов при помощи бумажного
+                                    полотенца
+                                    и выложите их на ровную поверхность по два ломтика.</li>
+                                <li class="days-menu__value">У вас должно получиться две заготовки для будущих
+                                    рулетиков.
+                                    Каждая заготовка состоит из двух ломтиков огурца, лежащих друг на друге.</li>
+                                <li class="days-menu__value">Выкладывайте сверху на огурцы сыр, индейку, салями. Смажьте
+                                    майонезом. Затем положите шпинат и крепко заверните ваши рулетики. Скрепите их
+                                    шпажкой,
+                                    затем порежьте поперек.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Кето-гарнир из капусты</p>
+                            <img src="/public/imgs/Keto side dish of cabbage.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 440 ккал</li>
+                                <li class="days-menu__value">Белки: 5 грамм</li>
+                                <li class="days-menu__value">Жиры: 37 грамм</li>
+                                <li class="days-menu__value">Углеводы: 12 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">1 кг капусты</li>
+                                <li class="days-menu__value">180-200 г сливочного масла</li>
+                                <li class="days-menu__value">соль, перец, чили по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Порежьте чистую капусту (без кочерыжки) ломтиками, чтобы их
+                                    толщина была не более 3,5 – 4 см. Затем поместите ее в форму для выпекания или на
+                                    противень с пергаментной бумагой. Добавьте соль и перец по вкусу.</li>
+                                <li class="days-menu__value">Растопите сливочное масло в сковороде и полейте им капусту,
+                                    потом поставьте ее в духовку, разогретую до 220 °C, на 25-30 минут до готовности.
+                                </li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 3</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Кето каша</p>
+                            <img src="/public/imgs/Keto porridge.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 613 ккал</li>
+                                <li class="days-menu__value">Белки: 13 грамм</li>
+                                <li class="days-menu__value">Жиры: 55 грамм</li>
+                                <li class="days-menu__value">Углеводы: 16 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">15 г льняного семени</li>
+                                <li class="days-menu__value">15 г подсолнечных семечек</li>
+                                <li class="days-menu__value">15 г семян чиа</li>
+                                <li class="days-menu__value">200 мл консервированного кокосового молока без сахара /
+                                    миндального</li>
+                                <li class="days-menu__value">соль по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Поместите все ингредиенты в кастрюлю, смешайте и доведите
+                                    до
+                                    кипения на среднем огне. После этого уменьшите огонь и варите кашу до тех пор, пока
+                                    она
+                                    не приобретет желаемую консистенцию (4-10 мин).</li>
+                                <li class="days-menu__value">Полученную кашу вы можете украсить несладкими ягодами и/или
+                                    корицей.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Салат из тунца</p>
+                            <img src="/public/imgs/Tuna salad.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 570 ккал</li>
+                                <li class="days-menu__value">Белки: 32 грамм</li>
+                                <li class="days-menu__value">Жиры: 38 грамм</li>
+                                <li class="days-menu__value">Углеводы: 17 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">4-6 листьев салата айсберг</li>
+                                <li class="days-menu__value">1 маленькое авокадо</li>
+                                <li class="days-menu__value">3 ст. ложки греческого йогурта</li>
+                                <li class="days-menu__value">2 ст. ложки оливкового масла</li>
+                                <li class="days-menu__value">2 небольших помидора</li>
+                                <li class="days-menu__value">200 г консервированного тунца</li>
+                                <li class="days-menu__value">2 ст. ложки песто</li>
+                                <li class="days-menu__value">1 ст. ложка яблочного уксуса</li>
+                                <li class="days-menu__value">1 огурец</li>
+                                <li class="days-menu__value">3 ст. ложки майонеза</li>
+                                <li class="days-menu__value">2 ст. ложки лимонного сока</li>
+                                <li class="days-menu__value">соль и перец по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Поместите в банку яблочный уксус и оливковое масло, а также
+                                    соль и перец по вкусу. Затем встряхните банку, чтобы ингредиенты перемешались.</li>
+                                <li class="days-menu__value">Порвите листья салата айсберг и положите их в салатную
+                                    миску.
+                                    Порежьте авокадо, огурец и помидоры и сложите их на листы салата.</li>
+                                <li class="days-menu__value">В отдельной посуде перемешайте тунец, песто, майонез,
+                                    лимонный
+                                    сок, йогурт, добавьте соль и перец по вкусу, затем добавьте эту смесь в салатную
+                                    миску и
+                                    полейте соусом из банки.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Кабачковая лапша</p>
+                            <img src="/public/imgs/Squash noodles.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 236 ккал</li>
+                                <li class="days-menu__value">Белки: 5 грамм</li>
+                                <li class="days-menu__value">Жиры: 20 грамм</li>
+                                <li class="days-menu__value">Углеводы: 12 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">150-170 мл кокосовых сливок</li>
+                                <li class="days-menu__value">3-4 небольших кабачка</li>
+                                <li class="days-menu__value">1 ст. ложка песто</li>
+                                <li class="days-menu__value">соль, перец, чили по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Помойте кабачки и порежьте их на тонкие слайсы.
+                                    Выкладывайте их
+                                    на бумажные салфетки, чтобы убрать с кабачков ненужную влагу.</li>
+                                <li class="days-menu__value">Начните разогревать кокосовые сливки до появления пузырей
+                                    на
+                                    краях сковороды, после чего добавьте песто, соль и перец по вкусу и смешайте их.
+                                    Добавьте кабачковые слайсы в сковороду и снова перемешайте, затем уменьшите огонь и
+                                    оставьте еще на 1,5-2,5 мин.</li>
+                                <li class="days-menu__value">Готовое блюдо можно украсить помидорами черри.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 4</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Сырная нарезка с малиной</p>
+                            <img src="/public/imgs/Sliced cheese with raspberries.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 360 ккал</li>
+                                <li class="days-menu__value">Белки: 18 грамм</li>
+                                <li class="days-menu__value">Жиры: 23 грамм</li>
+                                <li class="days-menu__value">Углеводы: 12 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">50 гр сыра Гауда</li>
+                                <li class="days-menu__value">30 гр сыра Маасдам</li>
+                                <li class="days-menu__value">100 гр малины</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Сыр нарезать, выложить в тарелку и украсить ягодами.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Фрикадельки из курицы</p>
+                            <img src="/public/imgs/Chicken Meatballs.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 470 ккал</li>
+                                <li class="days-menu__value">Белки: 49 грамм</li>
+                                <li class="days-menu__value">Жиры: 28 грамм</li>
+                                <li class="days-menu__value">Углеводы: 8 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">500 г куриного фарша</li>
+                                <li class="days-menu__value">1 ч. ложка кунжутного масла</li>
+                                <li class="days-menu__value">1 яйцо</li>
+                                <li class="days-menu__value">1 перо зеленого лука</li>
+                                <li class="days-menu__value">1 зубчик чеснока</li>
+                                <li class="days-menu__value">1 ч. ложка натертого имбиря</li>
+                                <li class="days-menu__value">1 ст. ложка мелко нарезанного кориандра</li>
+                                <li class="days-menu__value">30 г кокосовой муки</li>
+                                <li class="days-menu__value">соль по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Смешайте все ингредиенты до получения однородной массы,
+                                    затем
+                                    поместите ее на 10-20 мин в холодильник.</li>
+                                <li class="days-menu__value">После этого скатайте фрикадельки с диаметром 3-5 см (должно
+                                    получиться около 20 фрикаделек) и разложите их на противень, покрытый бумагой или
+                                    ковриком для запекания.</li>
+                                <li class="days-menu__value">Поставьте противень в духовку, разогретую до 180°С, на
+                                    20-25
+                                    мин, до готовности фрикаделек.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Мексиканская яичница</p>
+                            <img src="/public/imgs/Mexican fried eggs.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 315 ккал</li>
+                                <li class="days-menu__value">Белки: 16 грамм</li>
+                                <li class="days-menu__value">Жиры: 25 грамм</li>
+                                <li class="days-menu__value">Углеводы: 3 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">30гр сливочного масла</li>
+                                <li class="days-menu__value">1-3 перца халапеньо, нарезанных мелкими кусочкам</li>
+                                <li class="days-menu__value">2 нашинкованных зеленых лука</li>
+                                <li class="days-menu__value">5 яиц</li>
+                                <li class="days-menu__value">60гр натертого сыра</li>
+                                <li class="days-menu__value">2 помидора среднего размера, нарезанных мелкими кусочками
+                                </li>
+                                <li class="days-menu__value">специи по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Растопите сливочное масло в большой сковороде на среднем
+                                    огне.
+                                </li>
+                                <li class="days-menu__value">Затем поместите в сковороду помидоры, зеленый лук и перцы
+                                    халапеньо и помешивайте в течение 4-5 минут.</li>
+                                <li class="days-menu__value">Добавьте яйца, размешайте их вместе с содержимым в
+                                    сковороде и
+                                    готовьте еще 3 минуты.</li>
+                                <li class="days-menu__value"> Затем посыпьте яичницу приправами и натертым сыром.
+                                    Готовый
+                                    завтрак вы можете украсить авокадо или салатом.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 5</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Творожный кето-завтрак</p>
+                            <img src="/public/imgs/Cottage cheese keto breakfast.webp" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 430 ккал</li>
+                                <li class="days-menu__value">Белки: 18 грамм</li>
+                                <li class="days-menu__value">Жиры: 34 грамм</li>
+                                <li class="days-menu__value">Углеводы: 5 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">120 г творога 18% БЗМЖ</li>
+                                <li class="days-menu__value">50 г сметаны 30% БЗМЖ</li>
+                                <li class="days-menu__value">корица и/или ягоды по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Тщательно размешайте творог со сметаной и украсьте готовое
+                                    блюдо корицей и/или ягодами по вкусу.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Треска с грибами и брюссельской капустой</p>
+                            <img src="/public/imgs/Cod with mushrooms and Brussels sprouts.png" alt=""
+                                class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 450 ккал</li>
+                                <li class="days-menu__value">Белки: 38 грамм</li>
+                                <li class="days-menu__value">Жиры: 30 грамм</li>
+                                <li class="days-menu__value">Углеводы: 8 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">300-350 г трески</li>
+                                <li class="days-menu__value">300-350 г трески</li>
+                                <li class="days-menu__value">15-20 г сливочного масла</li>
+                                <li class="days-menu__value">2 ст. ложки оливкового масла</li>
+                                <li class="days-menu__value">200-220 г брюссельской капусты</li>
+                                <li class="days-menu__value">1 ст. ложка каперсов</li>
+                                <li class="days-menu__value">0,5 ч. ложки сухого тимьяна</li>
+                                <li class="days-menu__value">соль по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Порежьте брюссельскую капусту на половинки, затем положите
+                                    в
+                                    форму для запекания и полейте оливковым маслом.</li>
+                                <li class="days-menu__value">Добавьте солью и перцем по вкусу. Поставьте форму для
+                                    запекания
+                                    в духовку, разогретую до 180 °C, на 15-20 мин, до готовности брюссельской капусты.
+                                </li>
+                                <li class="days-menu__value">Нарежьте грибы и пожарьте их в сковороде вместе с сухим
+                                    тимьяном, используя сливочное масло. Когда грибы станут мягкими, поместите к ним
+                                    каперсы
+                                    и готовьте еще 4-5 мин на слабом огне.</li>
+                                <li class="days-menu__value">Затем положите массу из грибов и каперсов поверх
+                                    брюссельской
+                                    капусты из духовки.</li>
+                                <li class="days-menu__value">Нарежьте треску небольшими кусочками и натрите солью и
+                                    перцем
+                                    по вкусу, затем разложите их поверх капусты и грибов.</li>
+                                <li class="days-menu__value">Сбрызните оливковым маслом. Затем поместите форму для
+                                    выпечки в
+                                    духовку на 25-30 мин, до готовности рыбы.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Фруктовый творог</p>
+                            <img src="/public/imgs/Fruit curd.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 410 ккал</li>
+                                <li class="days-menu__value">Белки: 20 грамм</li>
+                                <li class="days-menu__value">Жиры: 28 грамм</li>
+                                <li class="days-menu__value">Углеводы: 14 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">150 гр творога 18% жирности</li>
+                                <li class="days-menu__value">100 гр апельсина</li>
+                                <li class="days-menu__value">60 гр груши</li>
+                                <li class="days-menu__value">60 гр зеленого яблока</li>
+                                <li class="days-menu__value">щепотка корицы по желанию</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Фрукты нарезать кубиками и добавить к творогу. По желанию
+                                    присыпать корицей.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 6</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Омлет со шпинатом</p>
+                            <img src="/public/imgs/curd.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 673 ккал</li>
+                                <li class="days-menu__value">Белки: 29 грамм</li>
+                                <li class="days-menu__value">Жиры: 60 грамм</li>
+                                <li class="days-menu__value">Углеводы: 12 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">3 ст. ложки сливочного масла</li>
+                                <li class="days-menu__value">230-250 г шпината</li>
+                                <li class="days-menu__value">7 яиц</li>
+                                <li class="days-menu__value">140-160 г бекона</li>
+                                <li class="days-menu__value">220-230 мл взбитых сливок высокой жирности</li>
+                                <li class="days-menu__value">140-160 г сыра</li>
+                                <li class="days-menu__value">соль и перец по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Пожарьте в сливочном масле бекон до хрустящей кондиции,
+                                    потом
+                                    добавьте шпинат и готовьте еще 1-2 мин.</li>
+                                <li class="days-menu__value">Вылейте в противень, смазанный сливочным маслом, смесь из
+                                    яиц и
+                                    сливок. Добавьте к ним шпинат и бекон из сковороды, сверху потрите сыр. Поставьте
+                                    противень в духовку, разогретую до 180 °C, приблизительно на 30-35 мин, пока на
+                                    краях не
+                                    появится аккуратная коричневая корочка.</li>
+                                <li class="days-menu__value">Готовое блюдо вы можете украсить вашей любимой зеленью.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Витаминная тарелка</p>
+                            <img src="/public/imgs/Vitamin Plate.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 310 ккал</li>
+                                <li class="days-menu__value">Белки: 9 грамм</li>
+                                <li class="days-menu__value">Жиры: 26 грамм</li>
+                                <li class="days-menu__value">Углеводы: 18 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">30 гр шпината</li>
+                                <li class="days-menu__value">100 гр помидоров</li>
+                                <li class="days-menu__value">100 гр зеленого сладкого перца</li>
+                                <li class="days-menu__value">100 гр огурцов</li>
+                                <li class="days-menu__value">50 гр оливок</li>
+                                <li class="days-menu__value">40 гр миндаля</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Овощи вымыть, нарезать и выложить на тарелку. Добавить к
+                                    ним
+                                    оливки и орехи.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Кето-салат с грудинкой</p>
+                            <img src="/public/imgs/Keto salad with brisket.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 670 ккал</li>
+                                <li class="days-menu__value">Белки: 16,5 грамм</li>
+                                <li class="days-menu__value">Жиры: 61 грамм</li>
+                                <li class="days-menu__value">Углеводы: 15 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">500-510 г свиной грудинки</li>
+                                <li class="days-menu__value">1-2 большие груши</li>
+                                <li class="days-menu__value">150 г голубого сыра</li>
+                                <li class="days-menu__value">70-80 г грецких орехов</li>
+                                <li class="days-menu__value">3 ст. ложки дижонской горцицы</li>
+                                <li class="days-menu__value">5 ст. ложек оливкового масла</li>
+                                <li class="days-menu__value">5 ст. ложек оливкового масла</li>
+                                <li class="days-menu__value">230-250 г салатного микса</li>
+                                <li class="days-menu__value">подсластитель</li>
+                                <li class="days-menu__value">соль, перец по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Нарежьте свинину на небольшие кусочки и выложите в форму
+                                    для
+                                    запекания, смазанную 1 ст. ложкой оливкового масла. Посолите и поперчите грудинку по
+                                    вкусу. Готовьте в духовке, разогретой до 200°C, 20-25 мин, пока свинина не покроется
+                                    корочкой.</li>
+                                <li class="days-menu__value">Мелко порежьте грецкие орехи. Возьмите сковороду и слегка
+                                    обжарьте на ней орехи, не используя масло. Порежьте груши и голубой сыр небольшими
+                                    кусочками. Сложите в салатную миску, туда же поместите измельченные орехи и остывшие
+                                    кусочки грудинки.</li>
+                                <li class="days-menu__value">В отдельной миске смешайте горчицу, оливковое масло и уксус
+                                    и
+                                    взбивайте, пока соус не приобретет однородную окраску.</li>
+                                <li class="days-menu__value">Затем поместите готовые кусочки кабачков в миску к салату,
+                                    рукколе, зеленому луку и перемешайте.</li>
+                                <li class="days-menu__value">Добавьте к грушам, орехам, сыру и свинине салатный микс,
+                                    размешайте. Залейте получившийся салат заправкой и подавайте к столу.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="days-menu none">
+                    <div class="days-menu__container">
+                        <div class="days-menu__header">
+                            <h2 class="days-menu__title">Дневник питания</h2>
+                            <p class="days-menu__day">День 7</p>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Завтрак</p>
+                            <p class="days-menu__eat-title">Простой кето-завтрак с горбушей</p>
+                            <img src="/public/imgs/A simple keto breakfast with pink salmon.png" alt=""
+                                class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 380 ккал</li>
+                                <li class="days-menu__value">Белки: 4 грамм</li>
+                                <li class="days-menu__value">Жиры: 31 грамм</li>
+                                <li class="days-menu__value">Углеводы: 22 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">1 авокадо</li>
+                                <li class="days-menu__value">30 г копченой горбуши</li>
+                                <li class="days-menu__value">3 ст. ложки сметаны</li>
+                                <li class="days-menu__value">1 ч. ложка лимонного сока</li>
+                                <li class="days-menu__value">соль и перец по вкусу</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Полностью удалите косточки из копченой горбуши. Должно
+                                    остаться
+                                    только филе.</li>
+                                <li class="days-menu__value">Порежьте авокадо на половинки, достаньте косточку.</li>
+                                <li class="days-menu__value">Равномерно распределите сметану по двум частям авокадо,
+                                    поместив ее в отверстие из-под косточки.</li>
+                                <li class="days-menu__value">Равномерно распределите горбушу, положив ее на каждую
+                                    половинку
+                                    авокадо поверх сметаны.</li>
+                                <li class="days-menu__value">Посолите и поперчите по вкусу. Полейте авокадо лимонным
+                                    соком и
+                                    подавайте к столу.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Обед</p>
+                            <p class="days-menu__eat-title">Кето-нарезка</p>
+                            <img src="/public/imgs/Keto slicing.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 470 ккал</li>
+                                <li class="days-menu__value">Белки: 29 грамм</li>
+                                <li class="days-menu__value">Жиры: 37 грамм</li>
+                                <li class="days-menu__value">Углеводы: 11 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">4 листа салата</li>
+                                <li class="days-menu__value">1 огурец</li>
+                                <li class="days-menu__value">1 зеленый сладкий перец</li>
+                                <li class="days-menu__value">60 гр сыра Гауда</li>
+                                <li class="days-menu__value">60 гр сыра Маасдам</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Овощи и сыр нарезать и выложить на тарелку.</li>
+                            </ol>
+                        </div>
+                        <div class="days-menu__menu">
+                            <p class="days-menu__eating">Ужин</p>
+                            <p class="days-menu__eat-title">Кето-мороженое</p>
+                            <img src="/public/imgs/Keto ice cream.png" alt="" class="days-menu__img">
+                            <p class="days-menu__text">Энергетическая ценность на одну порцию:</p>
+                            <ul>
+                                <li class="days-menu__value">Калорийность: 264 ккал</li>
+                                <li class="days-menu__value">Белки: 9 грамм</li>
+                                <li class="days-menu__value">Жиры: 12 грамм</li>
+                                <li class="days-menu__value">Углеводы: 32 грамм</li>
+                            </ul>
+                            <p class="days-menu__text">Ингредиенты:</p>
+                            <ul>
+                                <li class="days-menu__value">100 г клубники</li>
+                                <li class="days-menu__value">70-80 г манго</li>
+                                <li class="days-menu__value">40-50 мл жирных сливок</li>
+                                <li class="days-menu__value">70-80 мл греческого йогурта</li>
+                                <li class="days-menu__value">ванильный экстракт</li>
+                            </ul>
+                            <p class="days-menu__text">Способ приготовления:</p>
+                            <ol>
+                                <li class="days-menu__value">Если вы используете замороженные клубнику и манго, то
+                                    сначала
+                                    поставьте их на 15-20 мин на разморозку при комнатной температуре.</li>
+                                <li class="days-menu__value">Затем сложите их в блендер вместе с остальными
+                                    ингредиентами и
+                                    измельчите до получения однородной массы.</li>
+                                <li class="days-menu__value">Разлейте массу по формочкам для мороженого и поместите их в
+                                    холодильник на 2-3 часа.</li>
+                            </ol>
+                            <div class="days-menu__buttons">
+                                <button class="days-menu__button back">Назад</button>
+                                <button class="days-menu__button next">Вперед</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <aside class="calendar none">
+                <div class="calendar__container">
+                    <div class="calendar__header">
+                        <h3 class="calendar__title">Дни</h3>
+                        <p class="calendar__number"><span class="number">1</span>/7</p>
+                        
+                    </div>
+                    <div class="calendar__days">
+                        <div class="calendar__day calendar__day-active">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 1</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 2</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 3</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 4</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 5</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 6</p>
+                        </div>
+                        <div class="calendar__day">
+                            <img src="/public/imgs/pp.jpeg" alt="" class="calendar__img">
+                            <p class="calendar__name-lesson">День 7</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
